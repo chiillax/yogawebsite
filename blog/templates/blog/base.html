@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Yoganic (Yoga Classes for everyone)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="icon" href="{% static 'images/yoga.png' %}" type="image/png">
+        <noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+        
+        <style>
+            
+            #header nav > ul > li > a.menuToggle:after {
+                background-image: url("{% static 'images/bars.svg' %}");
+                background-position: right center;
+                background-repeat: no-repeat;
+                content: '';
+                display: inline-block;
+                height: 3.75em;
+                vertical-align: top;
+                width: 2em;
+            }
+            
+            #menu .close {
+                background-image: url("{% static 'images/close.svg' %}");
+                background-position: 4.85em 1em;
+                background-repeat: no-repeat;
+                border: 0;
+                cursor: pointer;
+                display: block;
+                height: 3em;
+                position: absolute;
+                right: 0;
+                top: 0;
+                vertical-align: middle;
+                width: 7em;
+            }
+
+            #banner .more:after {
+				background-image: url("{% static 'images/arrow.svg' %}");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				bottom: 4em;
+				content: '';
+				display: block;
+				height: 1.5em;
+				left: 50%;
+				margin: 0 0 0 -0.75em;
+				position: absolute;
+				width: 1.5em;
+            }
+            
+            #main > header {
+                padding: 12em 0 10em 0 ;
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }
+
+            body.landing #page-wrapper {
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding-top: 0;
+            }
+
+            body.is-mobile.landing #banner,
+            body.is-mobile.landing .wrapper.style4 {
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+        </style>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="/">YOGANIC</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="#">About Us</a></li>
+											<li><a href="#">Gallery</a></li>
+											<li><a href="{% url 'post_list' %}">Blogs</a></li>
+											<li><a href="#">Time Table</a></li>
+											<li><a href="#">Contact Us</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+                    </header>
+                    {% block content %}
+				    {% endblock %}
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
