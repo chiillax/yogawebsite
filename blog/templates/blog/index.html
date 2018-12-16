@@ -1,132 +1,275 @@
-{% extends 'blog/base.html' %}
 {% load static %}
-{% block content %}
-<!-- Banner -->
-<section id="banner">
-    <div class="inner">
-        <h2>YOGANIC</h2>
-        <p>Yoga is not about touching your toes.<br />
-            It is what you learn <br />
-            on the way down.</p>
-        <ul class="actions special">
-            <li><a href="#" class="button primary">Trial Classes</a></li>
-        </ul>
-    </div>
-    <a href="#one" class="more scrolly">Learn More</a>
-</section>
 
-<!-- One -->
-<section id="one" class="wrapper style1 special">
-    <div class="inner">
-        <header class="major">
-            <h2>Welcome to Yoganic</h2>
-            <p>At Yoganic we believe yoga is for everybody. Whether you are seeking precision, power,
-                stretch or surrender come explore with us. We offer yoga classes across a variety of
-                styles to create a practice that is safe, challenging, relaxing and enjoyable for students of all
-                experience levels. Our classes flow, but not too fast. We emphasise alignment, but not without
-                losing the flow. Whether you are here on vacation. Join us for Yoga
-                classes anytime. </p>
-        </header>
-    </div>
-</section>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Yoganic (Yoga Classes for everyone)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="icon" href="{% static 'images/yoga.png' %}" type="image/png">
+        <noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+        
+        <style>
 
-<!-- Two -->
-<section id="two" class="wrapper alt style2">
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/meditation.jpg' %}" alt="" /></div>
-        <div class="content">
-            <h2>Meditation</h2>
-            <p>Through pranayama (breathing exercises) and different techniques, experience the peace and harmony that
-                provide these amazing practices.</p>
-        </div>
-    </section>
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/nidra.jpg' %}" alt="" /></div>
-        <div class="content">
-            <h2>Yoga Nidra</h2>
-            <p>Yoga Nidra brings deep rest to the body and mind. It not only rejuvenates your mind but also adds vigor
-                to the body.
-                It’s a good idea to end your daily y
-                oga practice with Yoga Nidra or yogic sleep.</p>
-        </div>
-    </section>
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/power.jpg' %}" alt="" /></div>
-        <div class="content">
-            <h2>Power Yoga</h2>
-            <p>Power Yoga is a fitness-based vinyasa practice. An offshoot of Ashtanga Yoga, it has many of the same
-                qualities and benefits, including building internal heat,
-                increased stamina, strength, and flexibility, as well as stress reduction</p>
-        </div>
-    </section>
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/kids.jpg' %}" alt="" /></div>
-        <div class="content">
-            <h2>Kids Yoga</h2>
-            <p>Teaching Yoga to children provides kids with a variety of yoga tools that they can take away from yoga
-                class and use throughout their lives</p>
-        </div>
-    </section>
-</section>
+            #header nav > ul > li > a.menuToggle:after {
+                background-image: url("{% static 'images/bars.svg' %}");
+                background-position: right center;
+                background-repeat: no-repeat;
+                content: '';
+                display: inline-block;
+                height: 3.75em;
+                vertical-align: top;
+                width: 2em;
+            }
+            
+            #menu .close {
+                background-image: url("{% static 'images/close.svg' %}");
+                background-position: 4.85em 1em;
+                background-repeat: no-repeat;
+                border: 0;
+                cursor: pointer;
+                display: block;
+                height: 3em;
+                position: absolute;
+                right: 0;
+                top: 0;
+                vertical-align: middle;
+                width: 7em;
+            }
 
-<!-- Three -->
-<section id="three" class="wrapper style3 special">
-    <div class="inner">
-        <header class="major">
-            <h2>6 Asanas for a healthy body and mind</h2>
-            <p>These Asanas keep your body and mind fit n fresh throughout the day and it must be part of your New year
-                resolution.</p>
-        </header>
-        <ul class="features">
-            <li class="icon">
-                <h3>Vajra Asana</h3>
-                <p>This simple seated pose has major benefits. It's great for your knees, for all the muscles of your
-                    legs and to make your ankle joints flexible.</p>
-            </li>
-            <li class="icon">
-                <h3>Padma Asana</h3>
-                <p>This is the most beneficial and effective of all yoga asanas. The ultimate goal of a yoga asana
-                    practice is to be able to make our body limber and
-                    flexible enough to be able to sit for long hours of mediation.</p>
-            </li>
-            <li class="icon">
-                <h3>Gomukh Asana</h3>
-                <p>Gomukh asana is a great stretch for our spines. It helps in aligning our bodies and helps in
-                    preventing
-                    and getting rid of spinal and back problems - such common ailments of our time.</p>
-            </li>
-            <li class="icon">
-                <h3>Kapalbhati</h3>
-                <p>This asana oxygenates your body, energizes your mind and pumps all the stale oxygen out of your
-                    body.</p>
-            </li>
-            <li class="icon">
-                <h3>Adho Mukha Svanasana(downward dog)</h3>
-                <p>This asana is yoga's most popular asana for good reason. It's a fantastic all-body stretch and eases
-                    a lot of tension from your back</p>
-            </li>
-            <li class="icon">
-                <h3>Balasana(child's pose)</h3>
-                <p>Child's pose is a deeply relaxing and rejuvenating asana which can reset and recharge your body and
-                    mind. It relaxes the legs, the back and the neck.</p>
-            </li>
-        </ul>
-    </div>
-</section>
+            #banner .more:after {
+				background-image: url("{% static 'images/arrow.svg' %}");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				bottom: 4em;
+				content: '';
+				display: block;
+				height: 1.5em;
+				left: 50%;
+				margin: 0 0 0 -0.75em;
+				position: absolute;
+				width: 1.5em;
+            }
+            
+            #main > header {
+                padding: 12em 0 10em 0 ;
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }
 
-<!-- CTA -->
-<section id="cta" class="wrapper style4">
-    <div class="inner">
-        <header>
-            <h2>Yoga Makes Life Better</h2>
-            <p>Treat Yoga as your daily routine. It Makes your Life better than normal. Wanna
-                check.. then book a Trial Class.</p>
-        </header>
-        <ul class="actions stacked">
-            <li><a href="#" class="button fit primary">Book a Trial Class</a></li>
-            <li><a href="#" class="button fit">Learn More</a></li>
-        </ul>
-    </div>
-</section>
+            body.landing #page-wrapper {
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding-top: 0;
+            }
 
-{% endblock %}
+            body.is-mobile.landing #banner,
+            body.is-mobile.landing .wrapper.style4 {
+                background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'images/banner.jpg' %}");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+        </style>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="/">YOGANIC</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="/">Home</a></li>
+											<li><a href="#">About Us</a></li>
+											<li><a href="#">Gallery</a></li>
+											<li><a href="{% url 'post_list' %}">Blogs</a></li>
+											<li><a href="#">Time Table</a></li>
+											<li><a href="#">Contact Us</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+                    </header>
+                    
+                    <!-- Banner -->
+                    <section id="banner">
+                        <div class="inner">
+                            <h2>YOGANIC</h2>
+                            <p>Yoga is not about touching your toes.<br />
+                                It is what you learn <br />
+                                on the way down.</p>
+                            <ul class="actions special">
+                                <li><a href="#" class="button primary">Trial Classes</a></li>
+                            </ul>
+                        </div>
+                        <a href="#one" class="more scrolly">Learn More</a>
+                    </section>
+
+                    <!-- One -->
+                    <section id="one" class="wrapper style1 special">
+                        <div class="inner">
+                            <header class="major">
+                                <h2>Welcome to Yoganic</h2>
+                                <p>At Yoganic we believe yoga is for everybody. Whether you are seeking precision, power,
+                                    stretch or surrender come explore with us. We offer yoga classes across a variety of
+                                    styles to create a practice that is safe, challenging, relaxing and enjoyable for students of all
+                                    experience levels. Our classes flow, but not too fast. We emphasise alignment, but not without
+                                    losing the flow. Whether you are here on vacation. Join us for Yoga
+                                    classes anytime. </p>
+                            </header>
+                        </div>
+                    </section>
+
+                    <!-- Two -->
+                    <section id="two" class="wrapper alt style2">
+                        <section class="spotlight">
+                            <div class="image"><img src="{% static 'images/meditation.jpg' %}" alt="" /></div>
+                            <div class="content">
+                                <h2>Meditation</h2>
+                                <p>Through pranayama (breathing exercises) and different techniques, experience the peace and harmony that
+                                    provide these amazing practices.</p>
+                            </div>
+                        </section>
+                        <section class="spotlight">
+                            <div class="image"><img src="{% static 'images/nidra.jpg' %}" alt="" /></div>
+                            <div class="content">
+                                <h2>Yoga Nidra</h2>
+                                <p>Yoga Nidra brings deep rest to the body and mind. It not only rejuvenates your mind but also adds vigor
+                                    to the body.
+                                    It’s a good idea to end your daily y
+                                    oga practice with Yoga Nidra or yogic sleep.</p>
+                            </div>
+                        </section>
+                        <section class="spotlight">
+                            <div class="image"><img src="{% static 'images/power.jpg' %}" alt="" /></div>
+                            <div class="content">
+                                <h2>Power Yoga</h2>
+                                <p>Power Yoga is a fitness-based vinyasa practice. An offshoot of Ashtanga Yoga, it has many of the same
+                                    qualities and benefits, including building internal heat,
+                                    increased stamina, strength, and flexibility, as well as stress reduction</p>
+                            </div>
+                        </section>
+                        <section class="spotlight">
+                            <div class="image"><img src="{% static 'images/kids.jpg' %}" alt="" /></div>
+                            <div class="content">
+                                <h2>Kids Yoga</h2>
+                                <p>Teaching Yoga to children provides kids with a variety of yoga tools that they can take away from yoga
+                                    class and use throughout their lives</p>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!-- Three -->
+                    <section id="three" class="wrapper style3 special">
+                        <div class="inner">
+                            <header class="major">
+                                <h2>6 Asanas for a healthy body and mind</h2>
+                                <p>These Asanas keep your body and mind fit n fresh throughout the day and it must be part of your New year
+                                    resolution.</p>
+                            </header>
+                            <ul class="features">
+                                <li class="icon">
+                                    <h3>Vajra Asana</h3>
+                                    <p>This simple seated pose has major benefits. It's great for your knees, for all the muscles of your
+                                        legs and to make your ankle joints flexible.</p>
+                                </li>
+                                <li class="icon">
+                                    <h3>Padma Asana</h3>
+                                    <p>This is the most beneficial and effective of all yoga asanas. The ultimate goal of a yoga asana
+                                        practice is to be able to make our body limber and
+                                        flexible enough to be able to sit for long hours of mediation.</p>
+                                </li>
+                                <li class="icon">
+                                    <h3>Gomukh Asana</h3>
+                                    <p>Gomukh asana is a great stretch for our spines. It helps in aligning our bodies and helps in
+                                        preventing
+                                        and getting rid of spinal and back problems - such common ailments of our time.</p>
+                                </li>
+                                <li class="icon">
+                                    <h3>Kapalbhati</h3>
+                                    <p>This asana oxygenates your body, energizes your mind and pumps all the stale oxygen out of your
+                                        body.</p>
+                                </li>
+                                <li class="icon">
+                                    <h3>Adho Mukha Svanasana(downward dog)</h3>
+                                    <p>This asana is yoga's most popular asana for good reason. It's a fantastic all-body stretch and eases
+                                        a lot of tension from your back</p>
+                                </li>
+                                <li class="icon">
+                                    <h3>Balasana(child's pose)</h3>
+                                    <p>Child's pose is a deeply relaxing and rejuvenating asana which can reset and recharge your body and
+                                        mind. It relaxes the legs, the back and the neck.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- CTA -->
+                    <section id="cta" class="wrapper style4">
+                        <div class="inner">
+                            <header>
+                                <h2>Yoga Makes Life Better</h2>
+                                <p>Treat Yoga as your daily routine. It Makes your Life better than normal. Wanna
+                                    check.. then book a Trial Class.</p>
+                            </header>
+                            <ul class="actions stacked">
+                                <li><a href="#" class="button fit primary">Book a Trial Class</a></li>
+                                <li><a href="#" class="button fit">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Yoganic</li><li>Developed By: <a href="https://github.com/amriteshbhaskar">Amritesh Bhaskar</a></li>
+						</ul>
+					</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

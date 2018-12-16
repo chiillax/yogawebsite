@@ -1,23 +1,249 @@
 {% load static %}
-{% block content %}
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Yogasite</title>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Yogasite</a></h1>
-        </div>
 
-        {% for post in posts %}
-            <div>
-                <br><br>
-                <p>published: {{ post.published_date }}</p>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}" /> -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add a gray background color with some padding */
+        body {
+            margin: 0;
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            padding: 1px;
+            font-size: 20px;
+            text-align: center;
+            background: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+
+        }
+
+        .menubar {
+            top: 0;
+            right: 0;
+            padding: 20px;
+            position: fixed;
+        }
+
+        .row {
+            margin-top: 3.5%;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            /* float: left; */
+            width: 25%;
+            padding-left: 20px;
+            position: fixed;
+            right: 0.5%;
+
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+            margin-top: 20px;
+        }
+
+
+
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #21b2a6;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+
+        #menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu ul>li {
+            border-top: solid 1px rgba(0, 0, 0, 0.125);
+            margin: 0.5em 0 0 0;
+            padding: 0.5em 0 0 0;
+        }
+
+        #menu ul>li:first-child {
+            border-top: 0 !important;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        #menu ul>li>a {
+            border: 0;
+            color: white;
+            display: block;
+            font-size: 0.8em;
+            letter-spacing: 0.225em;
+            outline: 0;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>Yoganic</h2>
+    </div>
+
+
+    <div id="menu" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Time Table</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+        </ul>
+    </div>
+    <!-- <h2>Animated Sidenav Example</h2>
+    <p>Click on the element below to open the side navigation menu.</p> -->
+    <div class="menubar">
+        <span style="font-size:20px;cursor:pointer;float:right;color:black" onclick="openNav()">MENU &#9776;</span>
+    </div>
+    <div class="row">
+        <div class="leftcolumn">
+            {% for post in posts %}
+            <div class="card">
                 <h2><a href="">{{ post.title }}</a></h2>
+                <h5>published: {{ post.published_date }}</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
-        {% endfor %}
-    </body>
+            {% endfor %}
+            <!-- <div class="card">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2017</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco.</p>
+            </div> -->
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Me</h2>
+                <div class="fakeimg" style="height:100px;">Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("menu").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("menu").style.width = "0";
+        }
+    </script>
+</body>
+
 </html>
-{% endblock %}
+
+
+
+<!-- {% for post in posts %}
+<div>
+    <br><br>
+    <p>published: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %} -->
